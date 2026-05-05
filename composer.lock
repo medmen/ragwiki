@@ -1,0 +1,175 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1a80d6e6a2b142cdf47040fa05c5c87d",
+    "packages": [
+        {
+            "name": "php-ai/php-ml",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.com:php-ai/php-ml.git",
+                "reference": "543f11158c57bf64ef8ddecd5bab51d396d39f50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v4/projects/php-ai%2Fphp-ml/repository/archive.zip?sha=543f11158c57bf64ef8ddecd5bab51d396d39f50",
+                "reference": "543f11158c57bf64ef8ddecd5bab51d396d39f50",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpbench/phpbench": "^1.2",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpml\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkadiusz Kondas",
+                    "email": "arkadiusz.kondas@gmail.com"
+                }
+            ],
+            "description": "PHP-ML - Machine Learning library for PHP",
+            "homepage": "https://gitlab.com/php-ai/php-ml",
+            "keywords": [
+                "Neural network",
+                "artificial intelligence",
+                "computational learning theory",
+                "data science",
+                "feature extraction",
+                "machine learning",
+                "pattern recognition"
+            ],
+            "time": "2022-11-09T09:25:29+00:00"
+        },
+        {
+            "name": "rubix/tensor",
+            "version": "3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RubixML/Tensor.git",
+                "reference": "9f0ee170319280dcf081984adccefa8b0e6f06b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RubixML/Tensor/zipball/9f0ee170319280dcf081984adccefa8b0e6f06b8",
+                "reference": "9f0ee170319280dcf081984adccefa8b0e6f06b8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phalcon/zephir": "^0.17",
+                "phpbench/phpbench": "^1.0",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/constants.php"
+                ],
+                "psr-4": {
+                    "Tensor\\": "src/",
+                    "Zephir\\Optimizers\\FunctionCall\\": "optimizers/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew DalPino",
+                    "email": "support@andrewdalpino.com",
+                    "homepage": "https://github.com/andrewdalpino",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/RubixML/Tensor/graphs/contributors"
+                }
+            ],
+            "description": "A library and extension that provides objects for scientific computing in PHP.",
+            "homepage": "https://github.com/RubixML/Tensor",
+            "keywords": [
+                "1d convolution",
+                "2d convolution",
+                "arithmetic",
+                "blas",
+                "computation",
+                "computing",
+                "convolution",
+                "decomposition",
+                "dot product",
+                "eigendecomposition",
+                "eigenvalue",
+                "eigenvector",
+                "engineering",
+                "extension",
+                "lapack",
+                "linear algebra",
+                "math",
+                "matmul",
+                "matrix",
+                "matrix multiplication",
+                "multithreaded",
+                "php",
+                "php extension",
+                "pseudoinverse",
+                "scientific computing",
+                "signal processing",
+                "singular value decomposition",
+                "statistics",
+                "svd",
+                "tensor",
+                "trigonometry",
+                "vector",
+                "vector norm"
+            ],
+            "support": {
+                "chat": "https://t.me/RubixML",
+                "email": "support@andrewdalpino.com",
+                "issues": "https://github.com/RubixML/Tensor/issues",
+                "source": "https://github.com/RubixML/Tensor"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/andrewdalpino",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-15T19:43:50+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}
