@@ -1,0 +1,29 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# IDE
+/.idea/
+
+# Database files
+*.sqlite
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Archives
+*.7z
+*.zip
+*.tar.gz
+
+# Email files
+*.eml
+
+# OS
+.DS_Store
+Thumbs.db
