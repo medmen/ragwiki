@@ -41,14 +41,20 @@ function chunkByHeading(string $raw): array {
 function createEmbedding(string $text): array {
     // Call out to your embedding model over HTTP; return float[].
     // For example: POST to a local service that wraps a CPU‑only model.
-    $resp = file_get_contents(EMBEDDING_SERVER_URL, false, stream_context_create([
+    $payload = json_encode(['input' => $text, 'language' => 'de']);
+
+    $context = stream_context_create([
         'http' => [
-            'method' => 'POST',
-            'header' => "Content-Type: application/json\r\n",
-            'content' => json_encode(['input' => $text, 'language' => 'de'])
+            'method'  => 'POST',
+            'header'  => "Content-Type: application/json\r\n",
+            'content' => $payload,
+            'ignore_errors' => true,
         ]
-    ]));
-    $data = json_decode($resp, true);
+    ]);
+    
+    $response = file_get_contents(EMBEDDING_SERVER_URL, false, $context);
+    
+    $data = json_decode($response, true);
     return $data['embedding']; // float[]
 }
 
