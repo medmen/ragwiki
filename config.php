@@ -10,4 +10,4 @@ define('KI_SERVER_URL', 'http://localhost:8041/generate');
 define('KI_MODEL', 'gpt-3.5-turbo');
 define('KI_MAX_TOKENS', 1000);
 define('KI_TEMPERATURE', 0.7);
-
+define('DOKUWIKI_PAGES_DIR', '/var/www/php/dokuwiki/data/pages');
