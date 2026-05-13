@@ -14,7 +14,8 @@ class EmbedRequest(BaseModel):
 @app.post("/embed")
 async def embed(req: EmbedRequest):
     try:
-        model_name = req.model if req.model in ["all-MiniLM-L6-v2", "paraphrase-multilingual-MiniLM-L12-v2"] else "all-MiniLM-L6-v2"
+        # model_name = req.model if req.model in ["all-MiniLM-L6-v2", "paraphrase-multilingual-MiniLM-L12-v2"] else "all-MiniLM-L6-v2"
+        model_name = "all-MiniLM-L6-v2"
         if model_name not in models:
             models[model_name] = SentenceTransformer(model_name, device='cpu')
         

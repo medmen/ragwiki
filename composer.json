@@ -1,6 +1,15 @@
 {
     "require": {
         "php-ai/php-ml": "^0.10.0",
-        "rubix/tensor": "^3.0"
+        "rubix/tensor": "^3.0",
+        "ext-sqlite3": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }

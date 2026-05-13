@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('sqlite:' . __DIR__ . '/rag.db');
+$pdo = new PDO('sqlite:' . __DIR__ . '/rag.sqlite');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 require __DIR__ . '/functions_rag.php'; // contains searchChunks, createEmbedding, answerWithLLM
