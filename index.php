@@ -1,8 +1,11 @@
 <?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/functions_rag.php';
+require_once __DIR__ . '/similarity_search.php';
+
 $pdo = new PDO('sqlite:' . __DIR__ . '/rag.sqlite');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-require __DIR__ . '/functions_rag.php'; // contains searchChunks, createEmbedding, answerWithLLM
 
 $query = $_GET['q'] ?? '';
 $answer = '';

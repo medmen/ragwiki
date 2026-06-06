@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 RUN pip install fastapi uvicorn
 RUN pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-RUN pip install sentence-transformers
+RUN pip install sentence-transformers transformers accelerate
 
 COPY app.py .
 

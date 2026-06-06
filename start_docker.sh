@@ -1,5 +1,5 @@
-docker build --network=host -t rag-embeddings .
-docker run -d -p 8041:8041 --memory=8g rag-embeddings
+docker build --network=host -t rag-inference-server .
+docker run -d -p 8041:8041 --memory=8g rag-inference-server
 
 ## use
 # docker container list

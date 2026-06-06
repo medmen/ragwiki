@@ -1,4 +1,27 @@
 <?php
+function createEmbedding(string $text): array {
+    $payload = json_encode([
+        'texts' => [$text],
+        'model' => EMBEDDING_MODEL
+    ]);
+
+    $context = stream_context_create([
+        'http' => [
+            'method'  => 'POST',
+            'header'  => "Content-Type: application/json\r\n",
+            'content' => $payload
+        ]
+    ]);
+
+    $response = file_get_contents(EMBEDDING_SERVER_URL, false, $context);
+    if ($response === false) {
+        return [];
+    }
+    
+    $data = json_decode($response, true);
+    return $data[0] ?? [];
+}
+
 function answerWithLLM(string $question, array $chunks): string {
     $context = "";
     foreach ($chunks as $c) {
@@ -11,15 +34,14 @@ function answerWithLLM(string $question, array $chunks): string {
             . "WISSEN:\n" . $context . "\n\n"
             . "FRAGE:\n" . $question;
 
-    $resp = file_get_contents('http://localhost:8000/generate', false, stream_context_create([
+    $resp = file_get_contents('http://localhost:8041/generate', false, stream_context_create([
         'http' => [
             'method'  => 'POST',
             'header'  => "Content-Type: application/json\r\n",
             'content' => json_encode([
                 'prompt' => $prompt,
                 'max_tokens' => 512,
-                'temperature' => 0.1,
-                'language' => 'de'
+                'temperature' => 0.1
             ])
         ]
     ]));

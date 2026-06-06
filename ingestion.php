@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . '/config.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/functions_rag.php';
 $dir = __DIR__ .'/../dokuwiki/data/pages';
 $pdo = new PDO('sqlite:' . __DIR__ . '/rag.sqlite');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -38,30 +39,6 @@ function chunkByHeading(string $raw): array {
     return $chunks;
 }
 
-function createEmbedding(string $text): array {
-    // Call out to your embedding model over HTTP; return float[].
-    // For example: POST to a local service that wraps a CPU‑only model.
-    $payload = json_encode([
-        'texts' => [$text],
-        'model' => EMBEDDING_MODEL
-    ]);
-
-    $context = stream_context_create([
-        'http' => [
-            'method'  => 'POST',
-            'header'  => "Content-Type: application/json\r\n",
-            'content' => $payload,
-            // 'ignore_errors' => true,
-        ]
-    ]);
-    print "fetching Embedding from ".EMBEDDING_SERVER_URL."\n";
-
-    $response = file_get_contents(EMBEDDING_SERVER_URL, false, $context);
-    
-    $data = json_decode($response, true);
-    // FastAPI returns a list of embeddings, so we take the first one
-    return $data[0] ?? [];
-}
 
 $insertPage = $pdo->prepare("INSERT INTO pages (path, title) VALUES (:path, :title)");
 $insertChunk = $pdo->prepare("INSERT INTO chunks (page_id, heading, content, embedding) VALUES (:page_id, :heading, :content, :embedding)");
